@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: #001a1a;
+    color: #ff00ff;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://i.ibb.co/hmTHLns/2124.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.terminal {
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+    padding: 20px;
+    width: 90%;
+    max-width: 90%;
+    height: 60vh;
+    overflow-y: auto;
+    opacity: 0.9;
+    border: 2px solid #ff00ff;
+    background: #000;
+    animation: rgb 5s infinite alternate;
+    animation-delay: 0.5s;
+}
+
+@keyframes rgb {
+    0% { 
+      border-color: #ff0000;
+      box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+    }
+    50% {
+      border-color: #00ff00;
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    }
+    100% {
+      border-color: #0000ff;
+      box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+    }
+}
+
+.line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    animation: rainbow 5s infinite alternate;
+}
+
+@keyframes rainbow {
+    0% { color: #ff0000; }
+    50% { color: #0000ff; }
+    100% { color: #00ff00; }
+}
+
+.arrow {
+    color: #ff00ff;
+    margin-right: 10px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.input {
+    color: #ff00ff;
+    border: none;
+    background: none;
+    width: calc(100% - 30px);
+    margin-left: 10px;
+    outline: none;
+    font-size: 16px;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.button {
+    background: #330033;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.warning {
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: #ff0000;
+}
+
+.use-pc-mode {
+    font-size: 12px;
+    margin-top: 10px;
+    color: #00ff00;
+}
